@@ -3,10 +3,10 @@ package com.perqin.playground;
 import android.content.Context;
 import android.support.annotation.Nullable;
 import android.util.AttributeSet;
-import android.util.Log;
 import android.view.GestureDetector;
 import android.view.MotionEvent;
 import android.view.View;
+import android.widget.Scroller;
 
 /**
  * Author   : perqin
@@ -17,6 +17,8 @@ public class FlingView extends View implements GestureDetector.OnGestureListener
     private static final String TAG = "FlingView";
 
     private GestureDetector detector;
+    private Scroller scroller;
+    private OnFlingListener onFlingListener;
 
     public FlingView(Context context, @Nullable AttributeSet attrs) {
         super(context, attrs);
@@ -31,14 +33,17 @@ public class FlingView extends View implements GestureDetector.OnGestureListener
     private void initDetector(Context context) {
         detector = new GestureDetector(context, this);
         detector.setIsLongpressEnabled(false);
+        scroller = new Scroller(context);
+    }
+
+    public void setOnFlingListener(OnFlingListener listener) {
+        onFlingListener = listener;
     }
 
     @Override
     public boolean onTouchEvent(MotionEvent event) {
-        Log.i(TAG, "onTouchEvent: action = " + event.getAction());
-        boolean consumed = detector.onTouchEvent(event);
-//        Log.i(TAG, "onTouchEvent: consumed: " + (consumed ? "true" : "false"));
-        return consumed;
+        return false;
+//        return detector.onTouchEvent(event);
     }
 
     @Override
@@ -52,12 +57,11 @@ public class FlingView extends View implements GestureDetector.OnGestureListener
 
     @Override
     public boolean onSingleTapUp(MotionEvent e) {
-        return false;
+        return true;
     }
 
     @Override
     public boolean onScroll(MotionEvent e1, MotionEvent e2, float distanceX, float distanceY) {
-        Log.i(TAG, "onScroll");
         return true;
     }
 
@@ -66,8 +70,24 @@ public class FlingView extends View implements GestureDetector.OnGestureListener
     }
 
     @Override
+    public void computeScroll() {
+        if (scroller.computeScrollOffset()) {
+
+        }
+    }
+
+    @Override
     public boolean onFling(MotionEvent e1, MotionEvent e2, float velocityX, float velocityY) {
-        Log.i(TAG, "onFling");
+        if (onFlingListener != null) onFlingListener.onFling(e1, e2, velocityX, velocityY);
         return true;
+    }
+
+    public void smoothlyScrollDown() {
+        scroller.startScroll(0, 0, 0, 300, 1000);
+        invalidate();
+    }
+
+    public interface OnFlingListener {
+        void onFling(MotionEvent e1, MotionEvent e2, float velocityX, float velocityY);
     }
 }

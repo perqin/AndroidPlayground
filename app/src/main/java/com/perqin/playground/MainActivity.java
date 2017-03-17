@@ -2,32 +2,29 @@ package com.perqin.playground;
 
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
-import android.view.View;
-import android.view.ViewGroup;
 
 public class MainActivity extends AppCompatActivity /*implements GestureDetector.OnGestureListener*/ {
     private static final String TAG = "MainActivity";
-    private View mBox;
+//    private FlingView mBox;
+//    private ViewGroup mBoxParent;
+//    private Scroller mScroller;
 //    private GestureDetector detector;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        mBox = findViewById(R.id.box);
+//        mBox = (FlingView) findViewById(R.id.box);
+//        mBoxParent = (ViewGroup) mBox.getParent();
 //        detector = new GestureDetector(this, this);
     }
 
-    public void mainClick(View view) {
-        ViewGroup.MarginLayoutParams params = (ViewGroup.MarginLayoutParams) mBox.getLayoutParams();
-        params.topMargin += 150;
-        params.height += 150;
-        mBox.setLayoutParams(params);
-    }
-
+//    public void mainClick(View view) {
+//        mScroller.startScroll(0, 0, 300, 300, 1000);
+//    }
+//
 //    @Override
 //    public boolean onTouchEvent(MotionEvent event) {
-//        Log.i(TAG, "onTouchEvent");
 //        return detector.onTouchEvent(event);
 //    }
 //
@@ -58,6 +55,12 @@ public class MainActivity extends AppCompatActivity /*implements GestureDetector
 //    @Override
 //    public boolean onFling(MotionEvent e1, MotionEvent e2, float velocityX, float velocityY) {
 //        Log.i(TAG, "onFling");
-//        return false;
+//        scrollDown();
+//        return true;
+//    }
+//
+//    private void scrollDown() {
+//        mScroller.startScroll(0, 0, 0, 300, 1000);
+//        mBoxParent.invalidate();
 //    }
 }
