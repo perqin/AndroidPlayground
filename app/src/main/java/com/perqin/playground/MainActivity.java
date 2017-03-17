@@ -1,12 +1,10 @@
 package com.perqin.playground;
 
-import android.content.Intent;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 import android.view.GestureDetector;
 import android.view.MotionEvent;
-import android.view.View;
 
 public class MainActivity extends AppCompatActivity implements GestureDetector.OnGestureListener {
     private static final String TAG = "MainActivity";
@@ -19,12 +17,13 @@ public class MainActivity extends AppCompatActivity implements GestureDetector.O
         detector = new GestureDetector(this, this);
     }
 
-    public void mainClick(View view) {
-        startActivity(new Intent(this, SecondActivity.class));
-    }
+//    public void mainClick(View view) {
+//        startActivity(new Intent(this, SecondActivity.class));
+//    }
 
     @Override
     public boolean onTouchEvent(MotionEvent event) {
+        Log.i(TAG, "onTouchEvent");
         return detector.onTouchEvent(event);
     }
 

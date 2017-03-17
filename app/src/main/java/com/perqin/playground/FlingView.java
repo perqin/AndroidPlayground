@@ -35,12 +35,15 @@ public class FlingView extends View implements GestureDetector.OnGestureListener
 
     @Override
     public boolean onTouchEvent(MotionEvent event) {
-        return detector.onTouchEvent(event);
+        Log.i(TAG, "onTouchEvent: action = " + event.getAction());
+        boolean consumed = detector.onTouchEvent(event);
+//        Log.i(TAG, "onTouchEvent: consumed: " + (consumed ? "true" : "false"));
+        return consumed;
     }
 
     @Override
     public boolean onDown(MotionEvent e) {
-        return false;
+        return true;
     }
 
     @Override
@@ -55,7 +58,7 @@ public class FlingView extends View implements GestureDetector.OnGestureListener
     @Override
     public boolean onScroll(MotionEvent e1, MotionEvent e2, float distanceX, float distanceY) {
         Log.i(TAG, "onScroll");
-        return false;
+        return true;
     }
 
     @Override
@@ -65,6 +68,6 @@ public class FlingView extends View implements GestureDetector.OnGestureListener
     @Override
     public boolean onFling(MotionEvent e1, MotionEvent e2, float velocityX, float velocityY) {
         Log.i(TAG, "onFling");
-        return false;
+        return true;
     }
 }
