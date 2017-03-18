@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
-<com.perqin.playground.DelayFlingLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<com.perqin.playground.scroller.DelayFlingLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.perqin.playground.MainActivity">
+    tools:context="com.perqin.playground.activities.MainActivity">
 
     <!--<TextView-->
         <!--android:layout_width="wrap_content"-->
@@ -77,4 +77,4 @@
         android:background="@color/colorAccent"
         android:layout_margin="16dp"/>
 
-</com.perqin.playground.DelayFlingLayout>
+</com.perqin.playground.scroller.DelayFlingLayout>

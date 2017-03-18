@@ -1,4 +1,4 @@
-package com.perqin.playground;
+package com.perqin.playground.scroller;
 
 import android.content.Context;
 import android.support.annotation.NonNull;

@@ -9,17 +9,17 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".MainActivity" android:launchMode="standard">
+        <activity android:name=".activities.MainActivity" android:launchMode="standard">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".SecondActivity"
+        <activity android:name=".activities.SecondActivity"
             android:launchMode="singleTop"
             android:taskAffinity="com.perqin.playground.extra"/>
-        <activity android:name=".ThirdActivity"
+        <activity android:name=".activities.ThirdActivity"
             android:launchMode="standard"
             android:taskAffinity="com.perqin.playground.extra"/>
     </application>
