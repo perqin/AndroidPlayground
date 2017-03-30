@@ -25,13 +25,13 @@ public class EdView extends View {
 
     @Override
     public boolean dispatchTouchEvent(MotionEvent event) {
-        Log.i(TAG, "dispatchTouchEvent");
+        Log.i(TAG, "dispatchTouchEvent: " + EventNameUtils.eventNameOf(event.getAction()));
         return super.dispatchTouchEvent(event);
     }
 
     @Override
     public boolean onTouchEvent(MotionEvent event) {
         Log.i(TAG, "onTouchEvent");
-        return super.onTouchEvent(event);
+        return true;
     }
 }

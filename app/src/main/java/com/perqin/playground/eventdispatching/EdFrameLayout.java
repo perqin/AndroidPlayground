@@ -24,14 +24,15 @@ public class EdFrameLayout extends FrameLayout {
 
     @Override
     public boolean dispatchTouchEvent(MotionEvent ev) {
-        Log.i(TAG, "dispatchTouchEvent");
+        Log.i(TAG, "dispatchTouchEvent: " + EventNameUtils.eventNameOf(ev.getAction()));
         return super.dispatchTouchEvent(ev);
     }
 
     @Override
     public boolean onInterceptTouchEvent(MotionEvent ev) {
         Log.i(TAG, "onInterceptTouchEvent");
-        return super.onInterceptTouchEvent(ev);
+        // Intercept it if the gesture is already started
+        return ev.getAction() == MotionEvent.ACTION_MOVE;
     }
 
     @Override
