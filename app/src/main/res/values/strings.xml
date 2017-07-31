@@ -4,4 +4,6 @@
     <string name="second">Second</string>
     <string name="third">Third</string>
     <string name="star">Star</string>
+    <string name="execute">Execute</string>
+    <string name="command">Command</string>
 </resources>

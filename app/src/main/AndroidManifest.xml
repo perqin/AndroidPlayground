@@ -30,6 +30,7 @@
             android:launchMode="standard"
             android:taskAffinity="com.perqin.playground.extra" />
         <activity android:name=".indicatortint.IndicatorTintActivity" />
+        <activity android:name=".logcat.LogCatActivity" />
     </application>
 
 </manifest>

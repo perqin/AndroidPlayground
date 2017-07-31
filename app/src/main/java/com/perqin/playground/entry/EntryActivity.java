@@ -8,6 +8,7 @@ import android.support.v7.widget.RecyclerView;
 import com.perqin.playground.R;
 import com.perqin.playground.activities.MainActivity;
 import com.perqin.playground.indicatortint.IndicatorTintActivity;
+import com.perqin.playground.logcat.LogCatActivity;
 
 public class EntryActivity extends AppCompatActivity {
     private RecyclerAdapter mAdapter;
@@ -29,5 +30,6 @@ public class EntryActivity extends AppCompatActivity {
     private void addAllPlaygrounds() {
         mAdapter.addItem("Activities", MainActivity.class);
         mAdapter.addItem("Indicator Tint", IndicatorTintActivity.class);
+        mAdapter.addItem("Logcat", LogCatActivity.class);
     }
 }
