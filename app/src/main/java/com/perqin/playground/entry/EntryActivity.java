@@ -9,6 +9,7 @@ import com.perqin.playground.R;
 import com.perqin.playground.activities.MainActivity;
 import com.perqin.playground.indicatortint.IndicatorTintActivity;
 import com.perqin.playground.logcat.LogCatActivity;
+import com.perqin.playground.nullcontext.NullContextActivity;
 
 public class EntryActivity extends AppCompatActivity {
     private RecyclerAdapter mAdapter;
@@ -31,5 +32,6 @@ public class EntryActivity extends AppCompatActivity {
         mAdapter.addItem("Activities", MainActivity.class);
         mAdapter.addItem("Indicator Tint", IndicatorTintActivity.class);
         mAdapter.addItem("Logcat", LogCatActivity.class);
+        mAdapter.addItem("Null Context" , NullContextActivity.class);
     }
 }

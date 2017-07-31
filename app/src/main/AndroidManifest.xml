@@ -31,6 +31,7 @@
             android:taskAffinity="com.perqin.playground.extra" />
         <activity android:name=".indicatortint.IndicatorTintActivity" />
         <activity android:name=".logcat.LogCatActivity" />
+        <activity android:name=".nullcontext.NullContextActivity"></activity>
     </application>
 
 </manifest>
