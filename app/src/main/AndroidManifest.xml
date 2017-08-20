@@ -31,7 +31,9 @@
             android:taskAffinity="com.perqin.playground.extra" />
         <activity android:name=".indicatortint.IndicatorTintActivity" />
         <activity android:name=".logcat.LogCatActivity" />
-        <activity android:name=".nullcontext.NullContextActivity"></activity>
+        <activity android:name=".nullcontext.NullContextActivity" />
+        <activity android:name=".startavtivity.StarterActivity" />
+        <activity android:name=".startavtivity.StartedActivity" />
     </application>
 
 </manifest>
